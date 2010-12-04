@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+
+table.event-table-list {
+    width:100%;
+}
+td.event-table-middle {
+    width:25%;
+}
+td.event-table-large {
+    width: 50%;
+}
+
+span.event-label {
+	display:block;
+	float:left;
+    width:100px;
+    font-weight: bold;
+}  
+
+.event-information {
+    margin-bottom:12px;	
+} 
+
+.event-information-title {
+margin-bottom:8px;
+}
+
+.event-date {
+    margin:-5px 0px 12px 0px;
+    font-size: 0.9em;
+}
+
+.event-preview {
+    margin-bottom:20px;
+}
