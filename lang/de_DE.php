@@ -17,6 +17,6 @@ $lang['de_DE']['Event']['INFORMATION'] = 'Veranstaltungdaten';
 $lang['de_DE']['Event']['DATE'] = 'Datum';
 $lang['de_DE']['Event']['STARTTIME'] = 'um';
 $lang['de_DE']['Event']['CITY'] = 'Ort';
-$lang['de_DE']['Event']['READMORE'] = 'Mehr dazu';
+$lang['de_DE']['Event']['READMORE'] = 'Mehr dazu...';
 
 ?>
