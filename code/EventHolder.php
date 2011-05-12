@@ -24,7 +24,7 @@ class EventHolder extends Page {
 	public function getEvents($all=false,$limit=null) {
 		if ($all) 
 			return DataObject::get('Event','ParentID = ' . $this->ID,'+DateFrom',null,$limit);
-		return DataObject::get('Event','ParentID = ' . $this->ID . ' AND (DateTo >= CURDATE() OR DateFrom >= CURDATE())','+DateFrom,+TimeFrom',null,$limit);
+		return DataObject::get('Event','ParentID = ' . $this->ID . ' AND DateFrom >= CURDATE()','+DateFrom,+TimeFrom',null,$limit);
 		
 	}
 	
