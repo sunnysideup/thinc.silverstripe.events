@@ -128,7 +128,6 @@ class EventHolder_Controller extends Page_Controller {
 		return $this->renderWith($this->EventListType . 'EventList');
 	}
 	
-	
 
 }
 

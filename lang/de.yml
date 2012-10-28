@@ -7,3 +7,4 @@ de:
         END_TIME: 'bis'
         CITY: 'Ort'
         MORE: 'Mehr dazu...'
+        NO_EVENTS: 'Es wurden keine Anlässe gefunden...'

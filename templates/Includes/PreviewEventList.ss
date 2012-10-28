@@ -9,7 +9,7 @@
             <%t Event.START_TIME "__Event.START_TIME__" %> $TimeFrom.Format(H:i)
         <% end_if %>
         
-        <% if DateTo %> - $DateTo.FormatI18N(%x)
+        <% if DateTo %> - $DateTo.FormatI18N("%x")
             <% if TimeTo %> 
                 <%t Event.END_TIME "__END_TIME__" %> $TimeTo.Format(H:i)
             <% end_if %>
@@ -23,5 +23,5 @@
 </div>
 <% end_control %>
 <% else %>
-    <% _t('Event.NOEVENTS','__NOEVENTS__') %>
+    <%t Event.NO_EVENTS "__NO_EVENTS__" %>
 <% end_if %>
