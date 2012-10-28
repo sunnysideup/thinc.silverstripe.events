@@ -12,10 +12,10 @@ class EventHolder extends Page {
 		"EventListType" => "Compact"
 	);
 	
-	public function getCMSFields() {
-		$fields = parent::getCMSFields();
+	public function getSettingsFields() {
+		$fields = parent::getSettingsFields();
 		$fields->addFieldsToTab(
-			'Root.Content.Settings', 
+			'Root.Main.Settings', 
 			$this->scaffoldFormFields(array('tabbed'=>false,'ajaxSafe'=>true,'restrictFields'=>array('EventListType')))
 		);
 		return $fields;
@@ -23,8 +23,8 @@ class EventHolder extends Page {
 	
 	public function getEvents($all=false,$limit=null) {
 		if ($all) 
-			return DataObject::get('Event','ParentID = ' . $this->ID,'+DateFrom',null,$limit);
-		return DataObject::get('Event','ParentID = ' . $this->ID . ' AND DateFrom >= CURDATE()','+DateFrom,+TimeFrom',null,$limit);
+			return Event::get('Event','ParentID = ' . $this->ID);
+		return Event::get('Event','ParentID = ' . $this->ID . ' AND DateFrom >= CURDATE()');
 		
 	}
 	
@@ -84,7 +84,7 @@ class EventHolder extends Page {
         $events = $this->getEvents($all);
         if (!$events)
               return null;
-        $dos = new DataObjectSet();
+        $dos = new ArrayList();
         $year = '';
         $month = '';
         $section = null;

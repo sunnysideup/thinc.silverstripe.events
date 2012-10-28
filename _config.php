@@ -1,3 +1,3 @@
 <?php 
-LeftAndMain::add_extension('LeftAndMain','EventLeftAndMain');
+//LeftAndMain::add_extension('LeftAndMain','EventLeftAndMain');
 ?>
