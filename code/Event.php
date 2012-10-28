@@ -20,13 +20,14 @@ class Event extends Page {
 	
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
-		$fields->addFieldToTab('Root.Main.Event',$dateField = new DateField('DateFrom',_t('Event.DateFrom','Datum von')));
+		
+		$fields->addFieldToTab('Root.Main',$dateField = new DateField('DateFrom',_t('Event.DateFrom','Datum von')));
 		$dateField->setConfig('showcalendar', true);
-		$fields->addFieldToTab('Root.Main.Event',new TimeField('TimeFrom',_t('Event.TimeFrom','Startzeit')));
-        $fields->addFieldToTab('Root.Main.Event',$dateField = new DateField('DateTo',_t('Event.DateTo','Datum bis')));
+		$fields->addFieldToTab('Root.Main',new TimeField('TimeFrom',_t('Event.TimeFrom','Startzeit')));
+        $fields->addFieldToTab('Root.Main',$dateField = new DateField('DateTo',_t('Event.DateTo','Datum bis')));
         $dateField->setConfig('showcalendar', true);
-        $fields->addFieldToTab('Root.Main.Event',new TimeField('TimeTo',_t('Event.TimeTo','Endzeit')));
-        $fields->addFieldToTab('Root.Main.Event',new TextField('City',_t('Event.City','Ort')));
+        $fields->addFieldToTab('Root.Main',new TimeField('TimeTo',_t('Event.TimeTo','Endzeit')));
+        $fields->addFieldToTab('Root.Main',new TextField('City',_t('Event.City','Ort')));
         
         return $fields;
 	}

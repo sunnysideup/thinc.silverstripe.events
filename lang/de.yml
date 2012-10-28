@@ -1,0 +1,9 @@
+de:
+    Event: 
+        INFORMATION: 'Veranstaltungsdaten'
+        BACK: 'Zurück zur Übersicht'
+        DATE: 'Datum'
+        START_TIME: 'um'
+        END_TIME: 'bis'
+        CITY: 'Ort'
+        MORE: 'Mehr dazu...'

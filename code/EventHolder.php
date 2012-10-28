@@ -23,8 +23,8 @@ class EventHolder extends Page {
 	
 	public function getEvents($all=false,$limit=null) {
 		if ($all) 
-			return Event::get('Event','ParentID = ' . $this->ID);
-		return Event::get('Event','ParentID = ' . $this->ID . ' AND DateFrom >= CURDATE()');
+			return Event::get()->where('ParentID = ' . $this->ID);
+		return Event::get()->where('ParentID = ' . $this->ID . ' AND DateFrom > CURDATE()');
 		
 	}
 	
@@ -61,7 +61,7 @@ class EventHolder extends Page {
 	public function stageChildren($showAll=false) {
 		return DataObject::get('EventArchive','ParentID=' . $this->ID);
 	}
-	*/
+	
 	// made this while crossing the ballmers peek
 	public function getChildrenAsUL($attributes = "", $titleEval = '"<li>" . $child->Title', $extraArg = null, $limitToMarked = false, $childrenMethod = "AllChildrenIncludingDeleted", $numChildrenMethod = "numChildren", $rootCall = true, $minNodeCount = 30){
 		//$html = parent::getChildrenAsUL($attributes,$titleEval,$extraArg,$limitToMarked,$childrenMethod,$numChildrenMethod,$rootCall,$minNodeCount);
@@ -76,7 +76,7 @@ class EventHolder extends Page {
 		}
 		return $html;
 	}
-	
+	*/
 
 	
 	// made this while crossing the ballmers peek
@@ -164,7 +164,7 @@ class EventSection extends ViewableData {
 	
 	function addEvent($event) {
 		if ($this->events == null) {
-			$this->events = new DataObjectSet();
+			$this->events = new ArrayList();
 		}
 		$this->events->push($event);
 	} 

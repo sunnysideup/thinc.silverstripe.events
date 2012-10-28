@@ -9,9 +9,9 @@
             <% control Events %>
             <tr>
                 <td class="event-table-middle">
-                $DateFrom.FormatI18N(%x) <% if TimeFrom %> <% _t('Event.STARTTIME','__Event.STARTTIME__') %> $TimeFrom.Format(H:i)<% end_if %>
+                $DateFrom.FormatI18N("%x") <% if TimeFrom %> <% _t('Event.STARTTIME','__Event.STARTTIME__') %> $TimeFrom.Format(H:i)<% end_if %>
                 <% if DateTo %>
-                - $DateTo.FormatI18N(%x)
+                - $DateTo.FormatI18N("%x")
                 <% end_if %>
                 </td>
                 <td class="event-table-large"><a href="$Link" title="$Title">$Title</a></td>
