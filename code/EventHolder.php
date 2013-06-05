@@ -22,9 +22,10 @@ class EventHolder extends Page {
 	}
 	
 	public function getEvents($all=false,$limit=null) {
-		if ($all) 
+		if ($all) {
 			return Event::get()->where('ParentID = ' . $this->ID);
-		return Event::get()->where('ParentID = ' . $this->ID . ' AND DateFrom > CURDATE()');
+		}
+		return Event::get()->where('ParentID = ' . $this->ID . " AND DATEDIFF(\"DateTo\", CURDATE()) >= 0");
 		
 	}
 	
